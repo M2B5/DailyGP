@@ -1,0 +1,46 @@
+schedule:
+  timezone: ""
+
+  track-selection-time: "12:00"
+  start-time: "20:00"
+
+track-tag: "DailyGP"
+
+grand-prix:
+  max-drivers: 12
+  pits: 1
+  countdown-seconds: 10
+  excluded-track-queue-length: 5
+
+qualifying:
+  duration-minutes: 10
+  finish-grace-seconds: 120
+
+race:
+  duration-minutes: 30
+  finish-grace-seconds: 180
+  pace-multiplier: 1.1
+  drs: true
+  push-to-pass: false
+
+holograms:
+  latest-results:
+    world: "void"
+    x: 18.0
+    y: 80.0
+    z: 218.0
+    yaw: 0.0
+
+  total-wins:
+    world: "void"
+    x: 18.0
+    y: 80.0
+    z: 213.0
+    yaw: 0.0
+
+  win-streaks:
+    world: "void"
+    x: 18.0
+    y: 80.0
+    z: 208.0
+    yaw: 0.0

@@ -1,0 +1,41 @@
+name: DailyGP
+version: '${project.version}'
+main: com.github.M2B5.dailyGP.DailyGP
+api-version: '1.21'
+description: Runs a fully automated daily Grand Prix (qualifying + final) on a randomly selected TimingSystem track
+
+depend: [TimingSystem]
+softdepend: [FancyHolograms]
+
+commands:
+  dailygp:
+    description: View and manage the daily Grand Prix
+    usage: |
+      §6DailyGP Commands:
+      §e/dailygp info §7- Show the current Grand Prix status
+      §e/dailygp join §7- Join the running qualifying session
+      §e/dailygp drivers §7- List the drivers taking part
+      §e/dailygp now §7- Call a Grand Prix on a fresh track right now (admin)
+      §e/dailygp reload §7- Reload the configuration (admin)
+      §e/dailygp selecttrack §7- Select today's track now (admin)
+      §e/dailygp start §7- Open qualifying for the scheduled Grand Prix now (admin)
+      §e/dailygp cancel §7- Cancel the current Grand Prix (admin)
+    aliases: [dgp]
+    permission: dailygp.use
+    permission-message: §cYou don't have permission to use this command.
+
+permissions:
+  dailygp.*:
+    description: Grants access to all DailyGP commands
+    default: op
+    children:
+      dailygp.use: true
+      dailygp.admin: true
+
+  dailygp.use:
+    description: Allows joining qualifying and viewing the Grand Prix status
+    default: true
+
+  dailygp.admin:
+    description: Allows managing the Grand Prix (reload, selecttrack, start, cancel)
+    default: op
